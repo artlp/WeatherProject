@@ -23,7 +23,6 @@ app.get("/", function (req, res) {
                 const weatherDesc = weatherData.weather[0].description;
                 const icon = weatherData.weather[0].icon;
                 const newUrl = new URL('https://openweathermap.org/img/wn/' + icon + '.png');
-                console.log(newUrl.pathname);
                 res.write("<h1> Welcome to the new generation of weather service</h1>");
                 res.write("<h2>Current temperature in " + query + " is " + temp + ". The weather is currently " + weatherDesc + ".</h2>");
                 res.write("<img src=" + `${newUrl}` + ">");
